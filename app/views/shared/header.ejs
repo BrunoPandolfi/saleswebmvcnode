@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>SalesWebMvcNode</title>
-    <link rel='stylesheet' href="/css/bootstrap.min.css">
+    <link rel='stylesheet' href="/css/bootstrap-flaty.min.css">
 </head>
 
 <body>
@@ -12,17 +12,25 @@
         <a href="#" class="navbar-brand">SalesWebMvcNode</a>
         <div class="collapse navbar-collapse" id="navBarContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Home</a>
+                <li <% if (page_name === 'home'){%> 
+                    class="nav-item active"
+                     <% } %>>
+                    <a class="nav-link" href="/">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Departments</a>
+                <li <% if (page_name === 'departments'){%> 
+                    class="nav-item active"
+                     <% } %>>
+                    <a class="nav-link" href="/departments">Departments</a>
                 </li>   
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Sellers</a>
+                <li <% if (page_name === 'sellers'){%> 
+                    class="nav-item active"
+                     <% } %>>
+                    <a class="nav-link" href="/sellers">Sellers</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Sales</a>
+                <li <% if (page_name === 'sellers'){%> 
+                    class="nav-item active"
+                     <% } %>>
+                    <a class="nav-link" href="/salesrecord">Sales</a>
                 </li>
             </ul>
         </div>

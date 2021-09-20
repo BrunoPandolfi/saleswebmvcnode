@@ -1,0 +1,36 @@
+<%- include('../shared/header') %>
+    <div class="row">
+        <div class="col-sm-12">
+            <br/>
+            <h2>Departments</h2>
+            <br/>
+            <a href="/departments/create" class="btn btn-link" style="margin-bottom: 20px;">Create New</a>
+            <br/>
+            <table class="table table-sm">
+                <thead>
+                    <tr scope="row">
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(departments) {%>
+                        <% for(var i = 0; i < departments.length; i++){%>
+                            <tr scope="row">
+                                <td scope="col"><%= departments[i].id %> </td>
+                                <td scope="col"><%= departments[i].name %> </td>
+                                <td scope="col">
+                                    <a href="#" class="btn btn-link">Edit</a>
+                                    <a href="#" class="btn btn-link">Details</a>
+                                    <a href="#" class="btn btn-link">Delete</a>
+                                </td>
+                            </tr>
+                        <% }%> 
+                    <% } %> 
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+<%- include('../shared/footer') %> 

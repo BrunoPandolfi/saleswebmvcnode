@@ -3,5 +3,6 @@ const path = require('path');
 module.exports = {
     config: path.resolve(__dirname, 'config', 'database.js'),
     'migrations-path': path.resolve(__dirname, 'app', 'database', 'migrations'),
-    'seeders-path': path.resolve(__dirname, 'app', 'database', 'seeders')
+    'seeders-path': path.resolve(__dirname, 'app', 'database', 'seeders'),
+    'models-path' : path.resolve(__dirname, 'app', 'models')
 };

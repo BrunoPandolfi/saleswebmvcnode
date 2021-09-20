@@ -1,0 +1,19 @@
+<%- include('../shared/header') %>
+    <div class="row">
+        <div class="col-sm-6">
+            <br />
+            <h2>Create</h2>
+            <h4>Departments</h4>
+            <br />
+            <form action="/departments/create" method="POST">
+                <input type="hidden" id="id" name="id" value="7">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" />
+                </div>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                <a href="/departments" class="btn btn-link">Back to list</a>
+            </form>
+        </div>
+    </div>
+    <%- include('../shared/footer') %>
