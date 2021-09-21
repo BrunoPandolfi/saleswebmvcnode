@@ -3,8 +3,8 @@ const Department = require('../models/Department');
 module.exports = {
     async index (req, res){
         const departments =  await Department.findAll();
-
-        res.render('departments/index', {departments: departments, page_name: 'departments'});
+        var colNames = Object.getOwnPropertyNames(departments[0].dataValues);
+        res.render('departments/index', {departments: departments, page_name: 'departments', colNames: colNames });
     },
 
     create (req, res){

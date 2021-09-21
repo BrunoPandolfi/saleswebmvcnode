@@ -3,7 +3,7 @@ const SalesRecords = require('../models/SalesRecord');
 
 module.exports = {
     async index(req, res) {
-        const sales = await Department.findAll();
+        const sales = await SalesRecords.findAll();
         res.render('salesrecords/index', { sales: sales, page_name: 'salesrecords' });
     },
 

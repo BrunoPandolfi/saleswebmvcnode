@@ -9,8 +9,7 @@
             <table class="table table-sm">
                 <thead>
                     <tr scope="row">
-                        <th>Id</th>
-                        <th>Name</th>
+                        <th class="p-3"><%= colNames[1] %> </th> 
                         <th> </th>
                     </tr>
                 </thead>
@@ -18,8 +17,7 @@
                     <% if(departments) {%>
                         <% for(var i = 0; i < departments.length; i++){%>
                             <tr scope="row">
-                                <td scope="col"><%= departments[i].id %> </td>
-                                <td scope="col"><%= departments[i].name %> </td>
+                                <td scope="col" class="p-3"><%= departments[i].name %> </td>
                                 <td scope="col">
                                     <a href="#" class="btn btn-link">Edit</a>
                                     <a href="#" class="btn btn-link">Details</a>

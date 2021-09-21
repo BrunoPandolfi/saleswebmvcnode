@@ -2,10 +2,39 @@
     <div class="row">
         <div class="col-sm-12">
             <br/>
-            <h2>Sellers</h2>
-            <p>
-                Um texto da tela HOME
-            </p>
+            <h2>Departments</h2>
+            <br/>
+            <a href="/departments/create" class="btn btn-link" style="margin-bottom: 20px;">Create New</a>
+            <br/>
+            <table class="table table-sm">
+                <thead>
+                    <tr scope="row">
+                        <% for(var i = 1; i < sellers.length; i++){%>
+                            <th class="p-3"><%= colNames[i] %> </th> 
+                        <% }%> 
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(sellers) {%>
+                        <% for(var i = 0; i < sellers.length; i++){%>
+                            <tr scope="row" >
+                                <td scope="col" class="p-3"><%= sellers[i].name %> </td>
+                                <td scope="col" class="p-3"><%= sellers[i].email %> </td>
+                                <td scope="col" class="p-3"><%= moment(sellers[i].birthDate).format("DD/MM/YYYY ") %> </td>
+                                <td scope="col" class="p-3"><%= Number(sellers[i].baseSalary).toFixed(2) %> </td>
+
+                                <td scope="col">
+                                    <a href="#" class="btn btn-link">Edit</a>
+                                    <a href="#" class="btn btn-link">Details</a>
+                                    <a href="#" class="btn btn-link">Delete</a>
+                                </td>
+                            </tr>
+                        <% }%> 
+                    <% } %> 
+                </tbody>
+
+            </table>
         </div>
     </div>
 <%- include('../shared/footer') %> 

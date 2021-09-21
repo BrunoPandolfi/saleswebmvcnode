@@ -1,10 +1,11 @@
 const Seller = require('../models/Seller');
+const moment = require ('moment');
 
 module.exports = {
     async index (req, res){
         const sellers =  await Seller.findAll();
-
-        res.render('sellers/index', {sellers: sellers, page_name: 'sellers'});
+        var colNames = Object.getOwnPropertyNames(sellers[0].dataValues);   
+        res.render('sellers/index', {sellers: sellers, page_name: 'sellers', colNames: colNames, moment: moment});
     },
 
     async store (req, res){

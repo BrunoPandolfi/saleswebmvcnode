@@ -6,7 +6,8 @@ module.exports = {
       id: { 
         type: Sequelize.INTEGER,
         primaryKey: true,
-        allowNull: false 
+        allowNull: false,
+        autoIncrement: true,
       },
       date: {
         type: Sequelize.DATE,
@@ -19,7 +20,14 @@ module.exports = {
       status: {
         type: Sequelize.INTEGER,
         allowNull: false
-      }
+      },
+      sellerId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'seller', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+      },
     });
   },
 

@@ -3,9 +3,10 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('seller', {
       id: {
-        allowNull: false,
+        type: Sequelize.INTEGER,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        allowNull: false,
+        autoIncrement: true,
       },
       name: {
         allowNull: false,
@@ -23,6 +24,13 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DOUBLE
       },
+      departmentId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'department', key: 'id'},
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+      }
     });
   },
   down: async (queryInterface, Sequelize) => {
