@@ -10,7 +10,11 @@ routes.get('/', (req, res)=>{
 routes.get('/departments', departmentsController.index);
 routes.get('/departments/create', departmentsController.create);
 routes.post('/departments/create', departmentsController.store);
+
 routes.get('/sellers', sellersController.index);
+routes.get('/sellers/create', sellersController.create);
+routes.post('/sellers/create', sellersController.store);
+
 routes.post('/sellers', sellersController.store);
 routes.get('/salesrecord', salesController.index);
 routes.post('/salesrecord', salesController.store);

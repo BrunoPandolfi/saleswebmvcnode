@@ -1,0 +1,40 @@
+<%- include('../shared/header') %>
+    <div class="row">
+        <div class="col-sm-4">
+            <br />
+            <h2>Create</h2>
+            <h4>Departments</h4>
+            <br />
+            <form action="/sellers/create" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="email" name="email" />
+                </div>
+                <div class="form-group">
+                    <label for="birthDate">BirthDate</label>
+                    <input type="date" class="form-control" id="birthDate" name="birthDate" />
+                </div>
+                <div class="form-group">
+                    <label for="baseSalary">BaseSalary</label>
+                    <input type="text" class="form-control" id="baseSalary" name="baseSalary" />
+                </div>
+                <div class="form-group">
+                    <label for="departmentId">Department</label>
+                    <select class="form-control" name="departmentId" id="departmentId" >
+                        <% for (var i=0; i < departments.length; i++){%>
+                            <option value="<%= departments[i].id %>">
+                                <%= departments[i].name%>
+                            </option>
+                        <% } %>
+                    </select>   
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a href="/sellers" class="btn btn-link">Back to list</a>
+            </form>
+        </div>
+    </div>
+    <%- include('../shared/footer') %>

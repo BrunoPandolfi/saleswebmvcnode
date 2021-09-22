@@ -6,7 +6,8 @@ class Seller extends Model {
       name: DataTypes.STRING,
       email: DataTypes.STRING,
       birthDate: DataTypes.DATE,
-      baseSalary: DataTypes.DOUBLE
+      baseSalary: DataTypes.DOUBLE,
+      departmentId: DataTypes.INTEGER
     }, {
       sequelize,
       modelName: 'seller',

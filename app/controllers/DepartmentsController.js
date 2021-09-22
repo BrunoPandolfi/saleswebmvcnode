@@ -17,6 +17,6 @@ module.exports = {
 
         await Department.create({id, name});
 
-         res.redirect("/departments");
+        res.redirect("/departments");
     }
 }

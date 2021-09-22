@@ -1,5 +1,7 @@
 const Seller = require('../models/Seller');
+const Department = require('../models/Department');
 const moment = require ('moment');
+const { Sequelize } = require('sequelize');
 
 module.exports = {
     async index (req, res){
@@ -8,12 +10,22 @@ module.exports = {
         res.render('sellers/index', {sellers: sellers, page_name: 'sellers', colNames: colNames, moment: moment});
     },
 
-    async store (req, res){
-        console.log(req.body);
-        const { id, name, email, birthDate, baseSalary } = req.body;
+    async create (req, res){
+        const departments = await Department.findAll({ order: [['name', 'ASC']]});
+        //console.log(departments.values);
+        res.render('sellers/create', {page_name: 'sellers', departments: departments});
+    },
 
-        const seller = await Seller.create({ id, name, email, birthDate, baseSalary });
-        res.json(seller);
-        //res.render('sellers/index', {sellers: seller, page_name: 'sellers'});
+    async store (req, res){
+        const { name, email, birthDate, baseSalary, departmentId } = req.body;
+
+        console.log(req.body);
+
+        var baseSalaryNum = Number(baseSalary);
+        //var codDep = 1;
+        
+       
+        await Seller.create({ name, email, birthDate, baseSalary: baseSalaryNum, departmentId});
+        res.redirect("/sellers");
     }
 }
